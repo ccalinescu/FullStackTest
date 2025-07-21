@@ -1,4 +1,4 @@
-# Ezra UI
+# FullStackTest UI
 
 This Angular app fetches a list of tasks from a WebAPI, displays them, allows creating new tasks, and toggling completion by clicking a checkbox or the task name.
 
@@ -8,7 +8,7 @@ This Angular app fetches a list of tasks from a WebAPI, displays them, allows cr
 - Toggle completion of tasks
 
 ## How to Run
-1. Navigate to the `ezra-ui` folder.
+1. Navigate to the `fullstacktest-ui` folder.
 2. Run `npm install` to install dependencies.
 3. Run `ng serve` to start the development server.
 4. Open your browser at `http://localhost:4200`.
