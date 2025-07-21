@@ -1,0 +1,15 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+span {
+  margin-left: 8px;
+}
+input[type="text"] {
+  margin-top: 12px;
+  margin-right: 8px;
+}

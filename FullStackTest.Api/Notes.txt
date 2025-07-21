@@ -1,0 +1,5 @@
+﻿Additional NugetPackages installed:
+- Dapper
+- FluentMigrator.Runner
+- FluentMigrator.Runner.SQLite
+- Microsoft.Data.Sqlite

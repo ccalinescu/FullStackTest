@@ -1,0 +1,31 @@
+@FullStackTest_Api_HostAddress = https://localhost:7023/api
+
+GET {{FullStackTest_Api_HostAddress}}/mytasks/
+Accept: application/json
+###
+
+GET {{FullStackTest_Api_HostAddress}}/mytasks/5
+Accept: application/json
+###
+
+POST {{FullStackTest_Api_HostAddress}}/mytasks/
+Accept: application/json
+Content-Type: application/json
+{
+  "Name": ""
+}
+###
+
+PUT {{FullStackTest_Api_HostAddress}}/mytasks/
+Accept: application/json
+Content-Type: application/json
+{
+  "Id": 4,
+  "Name": "New Task",
+  "IsCompleted": true
+}
+###
+
+DELETE {{FullStackTest_Api_HostAddress}}/mytasks/4
+Accept: application/json
+###
