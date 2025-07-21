@@ -1,8 +1,8 @@
-﻿using EzraTest.Api.Models;
+﻿using FullStackTest.Api.Models;
 using FluentValidation.TestHelper;
 
 
-namespace EzraTest.Api.Tests.UnitTests
+namespace FullStackTest.Api.Tests.UnitTests
 {
     public class CreateTaskRequestValidatorTests
     {

@@ -1,4 +1,4 @@
-﻿namespace EzraTest.Api.Mappings
+﻿namespace FullStackTest.Api.Mappings
 {
     public class MappingProfile : AutoMapper.Profile { 
         public MappingProfile()

@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using EzraTest.Api.Models;
-using EzraTest.Api.Services;
+using FullStackTest.Api.Models;
+using FullStackTest.Api.Services;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System;
 
-namespace EzraTest.Api.Controllers
+namespace FullStackTest.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

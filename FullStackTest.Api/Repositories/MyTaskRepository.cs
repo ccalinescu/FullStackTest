@@ -1,9 +1,9 @@
 ﻿using Dapper;
-using EzraTest.Api.Models;
+using FullStackTest.Api.Models;
 using Microsoft.Data.Sqlite;
 using System.Data;
 
-namespace EzraTest.Api.Repositories
+namespace FullStackTest.Api.Repositories
 {
     public class MyTaskRepository : IMyTaskRepository
     {

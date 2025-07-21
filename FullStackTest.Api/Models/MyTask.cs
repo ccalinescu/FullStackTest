@@ -1,4 +1,4 @@
-﻿namespace EzraTest.Api.Models
+﻿namespace FullStackTest.Api.Models
 {
     public class MyTask
     {

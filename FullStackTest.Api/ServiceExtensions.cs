@@ -1,7 +1,7 @@
-﻿using EzraTest.Api.Mappings;
-using EzraTest.Api.Migrations;
-using EzraTest.Api.Repositories;
-using EzraTest.Api.Services;
+﻿using FullStackTest.Api.Mappings;
+using FullStackTest.Api.Migrations;
+using FullStackTest.Api.Repositories;
+using FullStackTest.Api.Services;
 using FluentMigrator.Runner;
 using FluentValidation;
 using Microsoft.Data.Sqlite;

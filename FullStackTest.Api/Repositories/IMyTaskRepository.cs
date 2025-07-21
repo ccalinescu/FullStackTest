@@ -1,6 +1,6 @@
-﻿using EzraTest.Api.Models;
+﻿using FullStackTest.Api.Models;
 
-namespace EzraTest.Api.Repositories
+namespace FullStackTest.Api.Repositories
 {
     public interface IMyTaskRepository
     {

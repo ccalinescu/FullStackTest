@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
-using EzraTest.Api.Controllers;
-using EzraTest.Api.Models;
-using EzraTest.Api.Services;
+using FullStackTest.Api.Controllers;
+using FullStackTest.Api.Models;
+using FullStackTest.Api.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Logging;
 using Moq;
 using Shouldly;
 
-namespace EzraTest.Api.Tests.UnitTests
+namespace FullStackTest.Api.Tests.UnitTests
 {
     public class MyTasksControllerTests
     {

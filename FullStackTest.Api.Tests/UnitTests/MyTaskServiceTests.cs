@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 using Moq;
 using Shouldly;
 using Xunit;
-using EzraTest.Api.Services;
-using EzraTest.Api.Repositories;
-using EzraTest.Api.Models;
+using FullStackTest.Api.Services;
+using FullStackTest.Api.Repositories;
+using FullStackTest.Api.Models;
 
-namespace EzraTest.Api.Tests.UnitTests
+namespace FullStackTest.Api.Tests.UnitTests
 {
     public class MyTaskServiceTests
     {

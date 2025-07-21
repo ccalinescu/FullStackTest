@@ -2,13 +2,13 @@
 using System.Data;
 using System.Threading.Tasks;
 using Dapper;
-using EzraTest.Api.Models;
-using EzraTest.Api.Repositories;
+using FullStackTest.Api.Models;
+using FullStackTest.Api.Repositories;
 using Microsoft.Data.Sqlite;
 using Shouldly;
 using Xunit;
 
-namespace EzraTest.Api.Tests.IntegrationTests
+namespace FullStackTest.Api.Tests.IntegrationTests
 {
     public class MyTaskRepositoryIntegrationTests
     {

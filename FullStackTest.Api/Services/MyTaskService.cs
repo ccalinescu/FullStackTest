@@ -1,7 +1,7 @@
-﻿using EzraTest.Api.Models;
-using EzraTest.Api.Repositories;
+﻿using FullStackTest.Api.Models;
+using FullStackTest.Api.Repositories;
 
-namespace EzraTest.Api.Services
+namespace FullStackTest.Api.Services
 {
     public class MyTaskService : IMyTaskService
     {

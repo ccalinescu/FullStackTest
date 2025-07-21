@@ -1,6 +1,6 @@
 ﻿using FluentMigrator;
 
-namespace EzraTest.Api.Migrations
+namespace FullStackTest.Api.Migrations
 {
     [Migration(2025072001)]
     public class InitialCreate : Migration

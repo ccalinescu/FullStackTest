@@ -1,4 +1,4 @@
-﻿using EzraTest.Api.Models;
+﻿using FullStackTest.Api.Models;
 using FluentValidation;
 
 public class CreateTaskRequestValidator : AbstractValidator<CreateTaskRequest>
