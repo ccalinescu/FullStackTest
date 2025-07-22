@@ -1,6 +1,7 @@
 
 
 
+
 # FullStackTest.Api
 
 A .NET 8 Web API for managing tasks, designed for full-stack development scenarios. The API supports CRUD operations for tasks and is ready for integration with frontend applications (e.g., Angular).
@@ -89,6 +90,11 @@ FullStackTest.Api.Tests/
 
 ### Installation
 
+**Note:**
+- You can do all below steps in Visual Studio 2022. Visual Studio will automatically handle the certificate generation and trust process when you run the project for the first time.
+- Use ***https*** profile to run the project in Visual Studio.
+
+
 1. Clone the repository
 2. Navigate to the project directory: 
 ```bash
@@ -109,12 +115,12 @@ dotnet build
 ```powershell
 dotnet dev-certs https --clean
 ```
-6. Create and trust a new development certificate
+- Create and trust a new development certificate
 *This generates a new self-signed certificate and prompts you to trust it:*
 ```bash
 dotnet dev-certs https --trust
 ```
-7. Verify the Certificate
+- Verify the Certificate
 *You can check if the certificate was successfully created and trusted:*
 ```bash
 dotnet dev-certs https --check
