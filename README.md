@@ -34,11 +34,11 @@ The following one was removed due to some inssues with a package update that was
 FullStackTest.Api/ 
 ├── Controllers/		# API controllers 
 │   └── MyTasksController.cs 
-├── Models/				# Data models and DTOs 
+├── Models/			# Data models and DTOs 
 ├── Services/			# Business logic services 
 ├── Repositories/		# Data access layer 
 ├── Migrations/			# Database migration files 
-└── Data/				# Database files (SQLite)
+└── Data/			# Database files (SQLite)
 FullStackTest.Api.Tests/ 
 └── UnitTests/			# Unit test files
 ```
