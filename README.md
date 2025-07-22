@@ -30,16 +30,18 @@ The following one was removed due to some inssues with a package update that was
 - **FluentValidation** for input validation
 
 ## Project Structure
+```
 FullStackTest.Api/ 
-├── Controllers/ # API controllers 
+├── Controllers/		# API controllers 
 │   └── MyTasksController.cs 
-├── Models/ # Data models and DTOs 
-├── Services/ # Business logic services 
-├── Repositories/ # Data access layer 
-├── Migrations/ # Database migration files 
-└── Data/ # Database files (SQLite)
+├── Models/				# Data models and DTOs 
+├── Services/			# Business logic services 
+├── Repositories/		# Data access layer 
+├── Migrations/			# Database migration files 
+└── Data/				# Database files (SQLite)
 FullStackTest.Api.Tests/ 
-└── UnitTests/ # Unit test files
+└── UnitTests/			# Unit test files
+```
 
 ## API Endpoints
 
