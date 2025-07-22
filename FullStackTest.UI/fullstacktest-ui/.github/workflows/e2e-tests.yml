@@ -1,0 +1,54 @@
+name: E2E Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'fullstacktest-ui/package-lock.json'
+        
+    - name: Install dependencies
+      working-directory: ./fullstacktest-ui
+      run: npm ci
+      
+    - name: Build application
+      working-directory: ./fullstacktest-ui
+      run: npm run build
+      
+    - name: Run E2E tests
+      working-directory: ./fullstacktest-ui
+      uses: cypress-io/github-action@v6
+      with:
+        start: npm start
+        wait-on: 'http://localhost:4200'
+        wait-on-timeout: 120
+        browser: chrome
+        record: false
+        
+    - name: Upload screenshots
+      uses: actions/upload-artifact@v4
+      if: failure()
+      with:
+        name: cypress-screenshots
+        path: fullstacktest-ui/cypress/screenshots
+        
+    - name: Upload videos
+      uses: actions/upload-artifact@v4
+      if: failure()
+      with:
+        name: cypress-videos
+        path: fullstacktest-ui/cypress/videos
