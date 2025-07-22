@@ -12,7 +12,7 @@ POST {{FullStackTest_Api_HostAddress}}/mytasks/
 Accept: application/json
 Content-Type: application/json
 {
-  "Name": ""
+  "Name": "test-task"
 }
 ###
 

@@ -7,30 +7,45 @@
     <button (click)="clearError()">&times;</button>
   </div>
 
-  <ul>
-    <li *ngFor="let task of tasks">
-      <input type="checkbox" [checked]="task.completed" (change)="toggleTask(task)" />
-      <!-- do not use inline styles for better maintainability
-      <span (click)="toggleTask(task)" [class.task-completed]="task.completed"></span> -->
-      <span (click)="toggleTask(task)" [style.textDecoration]="task.completed ? 'line-through' : 'none'">
-        {{ task.name }}
-      </span>
-    </li>
-  </ul>
-  <input [(ngModel)]="newTaskName" 
-         placeholder="New task" 
-         required 
-         minlength="3" 
-         maxlength="10"
-         #newTaskModel="ngModel" />
-  <button (click)="addTask()" [disabled]="newTaskModel.invalid">Add Task</button>
-
-  <div *ngIf="newTaskModel.invalid && (newTaskModel.dirty || newTaskModel.touched)" style="color: red;">
-    <div *ngIf="newTaskModel.errors?.['required']">
-      Task name is required.
-    </div>
-    <div *ngIf="newTaskModel.errors?.['minlength']">
-      Task name must be at least 3 characters long.
+  <div>
+    <input [(ngModel)]="newTaskName" 
+          placeholder="New task name" 
+          required 
+          minlength="3" 
+          maxlength="10"
+          #newTaskModel="ngModel" />
+    <button (click)="addTask()" [disabled]="newTaskModel.invalid">Add Task</button>
+    <div *ngIf="newTaskModel.invalid && newTaskModel.dirty">
+      <div *ngIf="newTaskModel.errors?.['required']" class="validation-error-message">
+        Task name is required.
+      </div>
+      <div *ngIf="newTaskModel.errors?.['minlength']" class="validation-error-message">
+        Task name must be at least 3 characters long.
+      </div>
     </div>
   </div>
+
+  <!-- Tasks Table -->
+  <div class="tasks-table">
+    <!-- Table Header -->
+    <div class="table-header">
+      <div class="column-completed">Completed</div>
+      <div class="column-task-name">Task Name</div>
+    </div>
+    
+    <!-- Table Body -->
+    <div class="table-body">
+      <div *ngFor="let task of tasks" class="table-row">
+        <div class="column-completed">
+          <input type="checkbox" [checked]="task.completed" (change)="toggleTask(task)" />
+        </div>
+        <div class="column-task-name">
+          <span (click)="toggleTask(task)" [ngClass]="{'task-completed': task.completed}">
+            {{ task.name }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

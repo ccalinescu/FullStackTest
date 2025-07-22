@@ -72,7 +72,7 @@ namespace FullStackTest.Api.Controllers
 
         // POST api/<TasksController>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CreateTaskRequest createTaskRequest)
+        public async Task<IActionResult> Post([FromBody] MyTaskCreateRequest createTaskRequest)
         {
             try
             {
@@ -94,7 +94,7 @@ namespace FullStackTest.Api.Controllers
                     return BadRequest("Failed to create task.");
                 }
 
-                return CreatedAtAction(nameof(Get), new { id = taskId }, taskId);
+                return CreatedAtAction(nameof(Get), new { id = taskId }, new MyTaskCreateResponse { Id = taskId });
             }
             catch (Exception ex)
             {
@@ -105,7 +105,7 @@ namespace FullStackTest.Api.Controllers
 
         // PUT api/<TasksController>/5
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] UpdateTaskRequest updateTaskRequest)
+        public async Task<IActionResult> Put([FromBody] MyTaskUpdateRequest updateTaskRequest)
         {
             try
             {

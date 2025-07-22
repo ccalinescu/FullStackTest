@@ -28,7 +28,9 @@ export class TasksListComponent implements OnInit {
 
   loadTasks() {
     console.log('loadTasks called');
+    
     this.clearError();
+
     this.tasksService.getTasks().subscribe({
       next: (tasks) => {
         console.log('Tasks received:', tasks);
@@ -42,8 +44,11 @@ export class TasksListComponent implements OnInit {
   }
 
   addTask() {
-    if (!this.newTaskName.trim()) return;
+    if (!this.newTaskName.trim()) 
+      return;
+
     this.clearError();
+    
     this.tasksService.createTask(this.newTaskName).subscribe({
       next: (response) => {
         console.log('Create task response:', response);
@@ -84,26 +89,28 @@ export class TasksListComponent implements OnInit {
     });
   }
 
-  toggleTask(task: Task) {
-    console.log('Toggling task:', task);
-    
+  toggleTask(myTask: Task) {
+    console.log('Toggling task:', myTask);
+
     // Validate task has proper ID before making API call
-    if (!task.id || task.id <= 0) {
-      console.error('Cannot toggle task with invalid ID:', task);
-      this.handleError('Task has invalid ID. Please refresh the page and try again.', task);
+    if (!myTask.id || myTask.id <= 0) {
+      console.error('Cannot toggle task with invalid ID:', myTask);
+      this.handleError('Task has invalid ID. Please refresh the page and try again.', myTask);
       return;
     }
+
+    myTask.completed = !myTask.completed;
     
-    task.completed = !task.completed;
     this.clearError();
-    this.tasksService.toggleTask(task).subscribe({
+
+    this.tasksService.toggleTask(myTask).subscribe({
       next: () => {
-        console.log(`Task ${task.id} toggled to ${task.completed}`);
+        console.log(`Task ${myTask.id} toggled to ${myTask.completed}`);
       },
       error: (error) => {
         console.error('Error toggling task:', error);
         // Revert the change on error
-        task.completed = !task.completed;
+        myTask.completed = !myTask.completed;
         this.handleError('Failed to update task. Please try again.', error);
       }
     });

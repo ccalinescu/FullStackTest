@@ -103,7 +103,7 @@ namespace FullStackTest.Api.Tests.UnitTests
         {
             _controller.ModelState.AddModelError("Name", "Required");
 
-            var result = await _controller.Post(new CreateTaskRequest());
+            var result = await _controller.Post(new MyTaskCreateRequest());
 
             var badRequest = result.ShouldBeOfType<BadRequestObjectResult>();
 
@@ -119,7 +119,7 @@ namespace FullStackTest.Api.Tests.UnitTests
         [Fact]
         public async Task Post_ShouldReturnBadRequest_WhenTaskIdIsInvalid()
         {
-            var request = new CreateTaskRequest();
+            var request = new MyTaskCreateRequest();
             var mappedTask = new MyTask();
             _mapperMock.Setup(m => m.Map<MyTask>(request)).Returns(mappedTask);
             _myTaskServiceMock.Setup(s => s.AddTaskAsync(mappedTask)).ReturnsAsync(0);
@@ -133,7 +133,7 @@ namespace FullStackTest.Api.Tests.UnitTests
         [Fact]
         public async Task Post_ShouldReturnCreatedAtAction_WhenTaskIsCreated()
         {
-            var request = new CreateTaskRequest();
+            var request = new MyTaskCreateRequest();
             var mappedTask = new MyTask();
             _mapperMock.Setup(m => m.Map<MyTask>(request)).Returns(mappedTask);
             _myTaskServiceMock.Setup(s => s.AddTaskAsync(mappedTask)).ReturnsAsync(5);
@@ -143,13 +143,12 @@ namespace FullStackTest.Api.Tests.UnitTests
             var createdResult = result.ShouldBeOfType<CreatedAtActionResult>();
             createdResult.ActionName.ShouldBe(nameof(_controller.Get));
             createdResult.RouteValues["id"].ShouldBe(5);
-            createdResult.Value.ShouldBe(5);
         }
 
         [Fact]
         public async Task Post_ShouldReturnInternalServerError_OnException()
         {
-            var request = new CreateTaskRequest();
+            var request = new MyTaskCreateRequest();
             _mapperMock.Setup(m => m.Map<MyTask>(request)).Throws(new Exception("fail"));
 
             var result = await _controller.Post(request);
@@ -164,7 +163,7 @@ namespace FullStackTest.Api.Tests.UnitTests
         {
             _controller.ModelState.AddModelError("Name", "Required");
 
-            var result = await _controller.Put(new UpdateTaskRequest());
+            var result = await _controller.Put(new MyTaskUpdateRequest());
 
             var badRequest = result.ShouldBeOfType<BadRequestObjectResult>();
 
@@ -180,7 +179,7 @@ namespace FullStackTest.Api.Tests.UnitTests
         [Fact]
         public async Task Put_ShouldReturnNotFound_WhenTaskDoesNotExist()
         {
-            var request = new UpdateTaskRequest { Id = 1 };
+            var request = new MyTaskUpdateRequest { Id = 1 };
             _myTaskServiceMock.Setup(s => s.GetTaskByIdAsync(request.Id)).ReturnsAsync((MyTask)null);
 
             var result = await _controller.Put(request);
@@ -191,7 +190,7 @@ namespace FullStackTest.Api.Tests.UnitTests
         [Fact]
         public async Task Put_ShouldReturnOk_WhenTaskIsUpdated()
         {
-            var request = new UpdateTaskRequest { Id = 1 };
+            var request = new MyTaskUpdateRequest { Id = 1 };
             var existingTask = new MyTask { Id = 1 };
             var mappedTask = new MyTask { Id = 1 };
 
@@ -207,7 +206,7 @@ namespace FullStackTest.Api.Tests.UnitTests
         [Fact]
         public async Task Put_ShouldReturnInternalServerError_OnException()
         {
-            var request = new UpdateTaskRequest { Id = 1 };
+            var request = new MyTaskUpdateRequest { Id = 1 };
             _myTaskServiceMock.Setup(s => s.GetTaskByIdAsync(request.Id)).ThrowsAsync(new Exception("fail"));
 
             var result = await _controller.Put(request);

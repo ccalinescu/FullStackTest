@@ -1,6 +1,6 @@
 ﻿namespace FullStackTest.Api.Models
 {
-    public class UpdateTaskRequest
+    public class MyTaskUpdateRequest
     {
         public int Id { get; set; }
         public string Name { get; set; }

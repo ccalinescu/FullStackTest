@@ -7,17 +7,17 @@ import { Task } from './task.model';
 export class TasksService {
   private apiUrl = '/api/MyTasks';
 
-  constructor(private http: HttpClient) {}
+  constructor(private _httpClient: HttpClient) {}
 
   getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.apiUrl);
+    return this._httpClient.get<Task[]>(this.apiUrl);
   }
 
   createTask(name: string): Observable<Task> {
-    return this.http.post<Task>(this.apiUrl, { name });
+    return this._httpClient.post<Task>(this.apiUrl, { name });
   }
 
-  toggleTask(task: Task): Observable<Task> {
-    return this.http.put<Task>(`${this.apiUrl}`, task);
+  toggleTask(myTask: Task): Observable<Task> {
+    return this._httpClient.put<Task>(`${this.apiUrl}`, myTask);
   }
 }

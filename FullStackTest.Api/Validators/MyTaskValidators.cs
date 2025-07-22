@@ -1,7 +1,7 @@
 ﻿using FullStackTest.Api.Models;
 using FluentValidation;
 
-public class CreateTaskRequestValidator : AbstractValidator<CreateTaskRequest>
+public class CreateTaskRequestValidator : AbstractValidator<MyTaskCreateRequest>
 {
     public CreateTaskRequestValidator()
     {
@@ -12,7 +12,7 @@ public class CreateTaskRequestValidator : AbstractValidator<CreateTaskRequest>
     }
 }
 
-public class UpdateTaskRequestValidator : AbstractValidator<UpdateTaskRequest>
+public class UpdateTaskRequestValidator : AbstractValidator<MyTaskUpdateRequest>
 {
     public UpdateTaskRequestValidator()
     {

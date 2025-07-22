@@ -12,5 +12,5 @@ import { TasksListComponent } from './tasks/tasks-list.component';
 })
 
 export class AppComponent {
-  title = 'this page';
+  title = 'Tasks Management Application';
 }

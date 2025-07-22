@@ -12,4 +12,5 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   providers: [provideHttpClient()],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
+
 export class AppModule {}
