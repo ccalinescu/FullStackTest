@@ -46,55 +46,8 @@ Node.js is required to run this Angular application. Follow the instructions for
    npm --version
    ```
 
-#### macOS:
-1. **Option A - Official Installer:**
-   - Visit https://nodejs.org/
-   - Download the LTS version for macOS
-   - Run the .pkg installer and follow the wizard
-
-2. **Option B - Using Homebrew (recommended):**
-   ```bash
-   # Install Homebrew if not already installed
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   
-   # Install Node.js
-   brew install node
-   ```
-
-3. Verify installation:
-   ```bash
-   node --version
-   npm --version
-   ```
-
-#### Linux (Ubuntu/Debian):
-1. **Option A - Using Node Version Manager (recommended):**
-   ```bash
-   # Install nvm
-   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-   
-   # Restart terminal or run:
-   source ~/.bashrc
-   
-   # Install latest LTS Node.js
-   nvm install --lts
-   nvm use --lts
-   ```
-
-2. **Option B - Using Package Manager:**
-   ```bash
-   # Update package index
-   sudo apt update
-   
-   # Install Node.js and npm
-   sudo apt install nodejs npm
-   ```
-
-3. Verify installation:
-   ```bash
-   node --version
-   npm --version
-   ```
+#### macOS, Linux 
+Only Windows setup is supported at the moment. But similar steps can be reproduced on other operating systems.
 
 ### Step 2: Install Angular CLI
 
@@ -106,11 +59,6 @@ npm install -g @angular/cli
 
 # Verify installation
 ng version
-```
-
-**Note:** If you encounter permission errors on macOS/Linux, you may need to use `sudo`:
-```bash
-sudo npm install -g @angular/cli
 ```
 
 **Alternative for Windows:** If you prefer not to install globally, you can use npx:
@@ -157,6 +105,10 @@ ng version        # Should show Angular CLI v19.x.x or higher
    # or alternatively
    ng serve
    ```
+   Alternativelly (recommended) you could start the development server and open the application in the browser at the same time:
+   ```bash
+   ng serve --open
+   ```
 
 4. **Open your browser:**
    Navigate to `http://localhost:4200`
@@ -184,7 +136,7 @@ To start a local development server:
 
 ```bash
 ng serve
-# or
+# or, if you want to open the application in the browser at the same time
 ng serve --open
 ```
 
