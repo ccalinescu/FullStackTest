@@ -363,3 +363,6 @@ MigrationBackup/
 FodyWeavers.xsd
 FullStackTest.Api/Data/app.db
 /FullStackTest.Api/Data/app.db
+/FullStackTest.UI/fullstacktest-ui/cypress/screenshots/
+*.mp4
+/FullStackTest.UI/fullstacktest-ui/cypress/videos/
